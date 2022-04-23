@@ -6,8 +6,8 @@ def code(text: str, liczba: int):
     kod = ""
     for litera in text:
 
-        for index, y in enumerate(alfabet):
-            if y == litera.lower():
+        for index, litera_alfabet in enumerate(alfabet):
+            if litera_alfabet == litera.lower():
                 suma = index + liczba
                 if suma >= len(alfabet):
                     suma -= len(alfabet)
@@ -26,8 +26,8 @@ def decode(text: str, liczba: int):
     kod = ""
     for litera in text:
 
-        for index, y in enumerate(alfabet):
-            if y == litera.lower():
+        for index, litera_alfabet in enumerate(alfabet):
+            if litera_alfabet == litera.lower():
                 suma = index - liczba
                 if suma >= len(alfabet):
                     suma -= len(alfabet)
