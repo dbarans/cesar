@@ -7,11 +7,13 @@ def code(text: str, liczba: int):
         for index, y in enumerate(alfabet):
             if y == litera.lower():
                 suma = index + liczba
-                if suma >= 26:
-                    suma -= 26
-
+                if suma >= len(alfabet):
+                    suma -= len(alfabet)
                 print(alfabet[suma], end="")
-
+                break
+            elif litera == " ":
+                print(" ", end="")
+                break
 
 
 def decode(text: str, liczba: int):
@@ -19,12 +21,15 @@ def decode(text: str, liczba: int):
         for index, y in enumerate(alfabet):
             if y == litera.lower():
                 suma = index - liczba
-                if suma >= 26:
-                    suma -= 26
-
+                if suma >= len(alfabet):
+                    suma -= len(alfabet)
                 print(alfabet[suma], end="")
+                break
+            elif litera == " ":
+                print(" ", end="")
+                break
 
-code("abcdef ghijkl", 20)
+
+code("sprawdzam poprawnosc kodu", 7)
 print("")
-decode("uvwxyzabcdef", 20)
-
+decode("zwyhdkght wvwyhduvzj rvkb", 7)
